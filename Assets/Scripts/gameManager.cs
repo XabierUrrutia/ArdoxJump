@@ -5,13 +5,13 @@ using UnityEngine;
 public class gameManager : MonoBehaviour
 {
     public GameObject cylinder;
-    public int numberRings;
+    public int numberRings = 30;
     public float maxDistance = 5;
     float yPosition;
-    // Start is called before the first frame update
-    private void Start()
+   
+    private void Start() 
     {
-        float yPostion = transform.position.y;
+        yPosition = -1.8f;
         for(int i = 0; i< numberRings; i++)
         {
             SpawnRings();

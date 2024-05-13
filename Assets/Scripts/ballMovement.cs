@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ballMovement : MonoBehaviour
 {
     public float speed;
     public Rigidbody rigidbody;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //rigidbody.velocity = new Vector3(0, speed, 0) * Time.deltaTime;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject splash;
 
     private void OnCollisionEnter(Collision collision) 
     {
-        rigidbody.velocity = new Vector3(0, speed, 0) * Time.deltaTime;
+        rigidbody.velocity = new Vector3(0, speed, 0) * Time.deltaTime ;
+
+        GameObject newSplash = Instantiate(splash
+        ,new Vector3(transform.position.x, collision.transform.position.y + 0.14f, transform.position.z), 
+        splash.transform.rotation) as GameObject;
+
+        newSplash.transform.parent = collision.transform;
+
+        Destroy(newSplash, 0.5f);
+
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            
+            SceneManager.LoadScene("ArdoxJump");
+            Destroy(this.gameObject);
+        }
     }
 }

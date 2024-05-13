@@ -4,4 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/ArdoxJump.unity
+    guid: cd444ffc2a3548740b0d73492a3be4a6
+  m_configObjects: {}
