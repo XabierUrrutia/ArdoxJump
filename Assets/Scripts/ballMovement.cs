@@ -23,7 +23,7 @@ public class ballMovement : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene("ArdoxJump");
+            SceneManager.LoadScene(2);
             Destroy(this.gameObject);
         }
     }
