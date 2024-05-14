@@ -11,7 +11,7 @@ public class ballMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) 
     {
-        rigidbody.velocity = new Vector3(0, speed, 0) * Time.deltaTime ;
+        rigidbody.velocity = new Vector3(0, speed, 0) ;
 
         GameObject newSplash = Instantiate(splash
         ,new Vector3(transform.position.x, collision.transform.position.y + 0.14f, transform.position.z), 
@@ -23,7 +23,6 @@ public class ballMovement : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            
             SceneManager.LoadScene("ArdoxJump");
             Destroy(this.gameObject);
         }

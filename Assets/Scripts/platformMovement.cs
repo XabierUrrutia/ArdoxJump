@@ -9,12 +9,12 @@ public class platformMovement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            this.transform.rotation *= Quaternion.Euler(new Vector3(0, 5f, 0));
+            this.transform.rotation *= Quaternion.Euler(new Vector3(0, 1f, 0));
         }
 
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            this.transform.rotation *= Quaternion.Euler(new Vector3(0, -5f, 0));
+            this.transform.rotation *= Quaternion.Euler(new Vector3(0, -1f, 0));
         }
     }
 }
