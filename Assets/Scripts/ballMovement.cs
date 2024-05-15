@@ -8,6 +8,12 @@ public class ballMovement : MonoBehaviour
     public float speed = 2f;
     public Rigidbody rigidbody;
     public GameObject splash;
+
+    [HideInInspector]
+    public int pass;
+    public float superSpeed = 10f;
+    private bool isSuperSpeedActive;
+    private int perfectPassCount = 2;
     
 
     void Start()
@@ -19,10 +25,16 @@ public class ballMovement : MonoBehaviour
         }
     }
 
-   
+    private void Update()
+    {
+        if (pass >= perfectPassCount && !isSuperSpeedActive)
+        {
+            isSuperSpeedActive = true;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision) 
     {
-        
         Time.timeScale = 0.5f;
         rigidbody.velocity = new Vector3(0, speed*2, 0)* Time.timeScale;
         
@@ -30,14 +42,25 @@ public class ballMovement : MonoBehaviour
         splash.transform.rotation) as GameObject;
 
         newSplash.transform.parent = collision.transform;
-
+        
         Destroy(newSplash, 0.5f);
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (isSuperSpeedActive)
         {
-            Destroy(this.gameObject);
-            SceneManager.LoadScene(2);
+            Destroy(collision.transform.parent.gameObject, 0.2f);
         }
+        else
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(this.gameObject);
+                SceneManager.LoadScene(2);
+            }
+        }
+        pass = 0;
+        isSuperSpeedActive = false;
     }
+
+
 
 }

@@ -28,14 +28,4 @@ public class ringManager : MonoBehaviour
         rings[Random.Range(0, rings.Length)].SetActive(false);
         rings[Random.Range(0, rings.Length)].SetActive(false);
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

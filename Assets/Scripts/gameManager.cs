@@ -30,7 +30,6 @@ public class gameManager : MonoBehaviour
 
     private void Start() 
     {
-        
         yPosition = -1.8f;
         for(int i = 0; i< numberRings; i++)
         {
@@ -53,8 +52,6 @@ public class gameManager : MonoBehaviour
             SceneManager.LoadScene(1);
             
         }
-        
-
     }
 
     public void AddScore(int score)
