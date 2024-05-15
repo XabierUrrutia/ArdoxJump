@@ -27,7 +27,7 @@ public class ballMovement : MonoBehaviour
 
     private void Update()
     {
-        if (pass >= perfectPassCount && !isSuperSpeedActive)
+        if (pass > perfectPassCount )
         {
             isSuperSpeedActive = true;
         }
