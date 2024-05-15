@@ -5,26 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class ballMovement : MonoBehaviour
 {
-    public float speed;
+    public float speed = 2f;
     public Rigidbody rigidbody;
     public GameObject splash;
+    
 
+    void Start()
+    {
+        
+        if (rigidbody == null)
+        {
+            rigidbody = GetComponent<Rigidbody>();
+        }
+    }
+
+   
     private void OnCollisionEnter(Collision collision) 
     {
-        rigidbody.velocity = new Vector3(0, speed, 0) ;
-
-        GameObject newSplash = Instantiate(splash
-        ,new Vector3(transform.position.x, collision.transform.position.y + 0.14f, transform.position.z), 
+        
+        Time.timeScale = 0.5f;
+        rigidbody.velocity = new Vector3(0, speed*2, 0)* Time.timeScale;
+        
+        GameObject newSplash = Instantiate(splash, new Vector3(transform.position.x, collision.transform.position.y + 0.14f, transform.position.z), 
         splash.transform.rotation) as GameObject;
 
         newSplash.transform.parent = collision.transform;
 
         Destroy(newSplash, 0.5f);
 
-        if(collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene(2);
             Destroy(this.gameObject);
+            SceneManager.LoadScene(2);
         }
     }
+
 }
