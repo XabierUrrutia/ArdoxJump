@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class ballMovement : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ballMovement : MonoBehaviour
     public float superSpeed = 10f;
     private bool isSuperSpeedActive;
     private int perfectPassCount = 2;
+
+    public AudioSource collisionAudio;
     
 
     void Start()
@@ -37,7 +40,9 @@ public class ballMovement : MonoBehaviour
     {
         Time.timeScale = 0.5f;
         rigidbody.velocity = new Vector3(0, speed*2, 0)* Time.timeScale;
-        
+
+        collisionAudio.Play();
+
         GameObject newSplash = Instantiate(splash, new Vector3(transform.position.x, collision.transform.position.y + 0.14f, transform.position.z), 
         splash.transform.rotation) as GameObject;
 

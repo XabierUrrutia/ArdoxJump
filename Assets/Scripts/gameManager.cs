@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class gameManager : MonoBehaviour
     public int bestScore;
     public int currentScore = 0;
     public static gameManager singleton;
+
+    public Text textPlus;
     float yPosition;
     
    
@@ -56,6 +59,8 @@ public class gameManager : MonoBehaviour
 
     public void AddScore(int score)
     {
+        textPlus.GetComponent<Animation>().Play();
+
         currentScore += score;
 
         if(currentScore > bestScore)
