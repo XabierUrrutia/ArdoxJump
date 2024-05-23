@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819c7adc843b7774a8ad775632a51abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!64 &297770448
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -385,6 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819c7adc843b7774a8ad775632a51abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!64 &1389770886
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -496,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819c7adc843b7774a8ad775632a51abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!64 &560473041
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -705,6 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819c7adc843b7774a8ad775632a51abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!64 &1912091654
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -816,6 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819c7adc843b7774a8ad775632a51abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!64 &1174553139
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -927,6 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819c7adc843b7774a8ad775632a51abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!64 &669152167
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1038,6 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819c7adc843b7774a8ad775632a51abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!64 &1917404742
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1062,7 +1069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 133690401674814444}
   - component: {fileID: 1160659990}
-  - component: {fileID: 1160659992}
+  - component: {fileID: 5757353223222625351}
   m_Layer: 0
   m_Name: jump
   m_TagString: Untagged
@@ -1106,7 +1113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9, y: -0.02, z: 1.99}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1160659992
+--- !u!114 &5757353223222625351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1118,3 +1125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819c7adc843b7774a8ad775632a51abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 4200610226703804463, guid: 0315d7e89c31ac64d99c5bccaaf9cd63,
+    type: 3}

@@ -9,6 +9,7 @@ public class ballMovement : MonoBehaviour
     public float speed = 2f;
     public Rigidbody rigidbody;
     public GameObject splash;
+    public GameObject particle;
 
     [HideInInspector]
     public int pass;
@@ -52,6 +53,8 @@ public class ballMovement : MonoBehaviour
 
         if (isSuperSpeedActive)
         {
+            Vector3 vector = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z - 0.5f);
+            Instantiate(particle, vector, Quaternion.identity);
             Destroy(collision.transform.parent.gameObject, 0.2f);
         }
         else

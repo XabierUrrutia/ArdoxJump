@@ -115,6 +115,10 @@ MonoBehaviour:
   speed: 200
   rigidbody: {fileID: -1286255836458569955}
   splash: {fileID: 4238377493667809173, guid: 27d7c252c1ec4a04ebbfcbdaae1dd87d, type: 3}
+  particle: {fileID: 0}
+  pass: 0
+  superSpeed: 10
+  collisionAudio: {fileID: 0}
 --- !u!54 &-1286255836458569955
 Rigidbody:
   m_ObjectHideFlags: 0
