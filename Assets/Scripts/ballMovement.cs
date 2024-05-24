@@ -10,6 +10,7 @@ public class ballMovement : MonoBehaviour
     public Rigidbody rigidbody;
     public GameObject splash;
     public GameObject particle;
+    public int numBounce = 3;
 
     [HideInInspector]
     public int pass;
@@ -50,6 +51,14 @@ public class ballMovement : MonoBehaviour
         newSplash.transform.parent = collision.transform;
         
         Destroy(newSplash, 0.5f);
+
+        numBounce--;
+        Debug.Log(numBounce);
+        if (numBounce == 0)
+        {
+            numBounce = 3;
+            Destroy(collision.gameObject);
+        }
 
         if (isSuperSpeedActive)
         {

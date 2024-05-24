@@ -68,5 +68,5 @@ public class gameManager : MonoBehaviour
             bestScore = currentScore;
             PlayerPrefs.SetInt("HighScore", currentScore);
         }
-    }   
+    }
 }
